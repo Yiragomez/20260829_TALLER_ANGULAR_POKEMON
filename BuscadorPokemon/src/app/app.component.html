@@ -1,0 +1,62 @@
+<main class="page">
+  <header class="header">
+    <div class="brand">
+      <span class="dot" aria-hidden="true"></span>
+      <h1>Pokedex</h1>
+    </div>
+    <p class="subtitle">Busca un Pokemon por su nombre o numero y consulta su ficha.</p>
+  </header>
+
+  <form class="search" (ngSubmit)="search()">
+    <input
+      class="search-input"
+      type="text"
+      name="query"
+      [(ngModel)]="query"
+      placeholder="Ej: pikachu, charizard o 25"
+      autocomplete="off"
+      aria-label="Nombre o numero del Pokemon"
+    />
+    <button class="search-btn" type="submit" [disabled]="loading">
+      {{ loading ? 'Buscando...' : 'Buscar' }}
+    </button>
+  </form>
+
+  <section class="result" aria-live="polite">
+    <div class="state" *ngIf="loading">
+      <span class="spinner" aria-hidden="true"></span>
+      <p>Cargando Pokemon...</p>
+    </div>
+
+    <div class="state error" *ngIf="!loading && error">
+      <p>{{ error }}</p>
+    </div>
+
+    <div class="state hint" *ngIf="!loading && !error && !searched">
+      <p>Escribe algo y pulsa Buscar para empezar.</p>
+    </div>
+
+    <article class="card" *ngIf="!loading && !error && pokemon as p">
+      <div class="card-image">
+        <img [src]="p.image" [alt]="'Imagen de ' + p.name" width="220" height="220" />
+      </div>
+      <div class="card-body">
+        <span class="card-id">{{ padId(p.id) }}</span>
+        <h2 class="card-name">{{ p.name }}</h2>
+        <div class="types">
+          <span class="type" *ngFor="let t of p.types">{{ t }}</span>
+        </div>
+        <dl class="stats">
+          <div>
+            <dt>Altura</dt>
+            <dd>{{ p.height / 10 }} m</dd>
+          </div>
+          <div>
+            <dt>Peso</dt>
+            <dd>{{ p.weight / 10 }} kg</dd>
+          </div>
+        </dl>
+      </div>
+    </article>
+  </section>
+</main>
