@@ -1,0 +1,108 @@
+/* Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fondo */
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #d9eff8, #b9dceb);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px;
+}
+
+/* Contenedor principal */
+form{
+    background: #ffffff;
+    width: 430px;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.15);
+}
+
+/* Título */
+h1{
+    position: absolute;
+    top: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 38px;
+    font-weight: bold;
+    color: #2d5d7b;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* Etiquetas */
+label{
+    display: block;
+    font-weight: bold;
+    color: #34586b;
+    margin-bottom: 6px;
+}
+
+/* Campos */
+input[type="text"],
+input[type="date"],
+input[type="tel"],
+select{
+    width: 100%;
+    padding: 11px;
+    border: 2px solid #c8dfe9;
+    border-radius: 10px;
+    font-size: 15px;
+    background: #f8fcfd;
+    transition: .3s;
+}
+
+/* Efecto al seleccionar */
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="tel"]:focus,
+select:focus{
+    border-color: #7fb8d4;
+    outline: none;
+    box-shadow: 0 0 8px rgba(127,184,212,.35);
+}
+
+/* Checkbox */
+input[type="checkbox"]{
+    margin-right: 8px;
+    transform: scale(1.1);
+}
+
+/* Botón */
+input[type="submit"]{
+    width: 100%;
+    padding: 12px;
+    background: #7fb8d4;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+/* Hover del botón */
+input[type="submit"]:hover{
+    background: #5ea6c8;
+}
+
+/* Eliminar los <br> */
+br{
+    display: none;
+}
+
+/* Espaciado */
+label,
+input,
+select{
+    margin-bottom: 15px;
+}

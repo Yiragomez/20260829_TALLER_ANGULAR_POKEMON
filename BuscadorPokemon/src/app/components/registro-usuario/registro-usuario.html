@@ -1,1 +1,115 @@
-<p>registro-usuario works!</p>
+
+<body>
+  <h1>Formulario de Contacto</h1>
+
+  <form id='FormularioRegistro' action="#">
+
+    <div>
+        <form id="FormularioRegistro" (ngSubmit)="guardarUsuario()">
+
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Nombre:</label>
+        <input type="text" id="nombre" [(ngModel)]="nombre" name="nombre" placeholder="Carlos" required>
+      </div>
+    </div>
+
+    
+
+    <div class="form-group">
+      <label for="Apellido">Apellido:</label><br>
+      <input type="text" id="apellido" [(ngModel)]="apellido" name="apellido" placeholder="Perez" required>
+    </div>
+
+    <div>
+      <label for="pais">Pais:</label><br>
+      <select id="pais" name="pais" [(ngModel)]="pais" required>
+        <option value="" disabled selected>Selelccionar</option>
+        <option value="169 - Colombia"selected>Colombia</option>
+        <option value="149 - Canada">Canada</option>
+        <option value="850 - Venezuela">Venezuela</option>
+      </select>
+    </div>
+    <br>
+
+    <div>
+     <label for="ciudad">Ciudad:</label><br>
+      <select id="ciudad" name="ciudad" [(ngModel)]="ciudad" required>
+        <option value="" disabled selected>Seleccione una opción</option>
+        <optgroup label="Colombia">
+          <option value="11001 - Bogotá D.C.,"></option>
+          <option value="05001 - Medellin">Medellín</option>
+          <option value="76001 - Cali">Cali</option>
+          <option value="08001 - Barranquilla">Barranquilla</option>
+          <option value="13001 - Cartagena">Cartagena</option>
+        <optgroup>
+        <optgroup label="Canada">
+          <option value="3520005 - Toronto">Toronto</option>
+          <option value="2466023 - Montrèal">Montrèal</option>
+          <option value="5915022 - Vancouver">Vancouver</option>
+          <option value="4806016 - Calgary">Calgary</option>
+          <option value="4811061 - Edmonton">Edmonton</option>
+        <optgroup>
+        <optgroup label="Venezuela">
+          <option value="01001 - Caracas">Caracas</option>
+          <option value="24001 - Maracaibo">Maracaibo</option>
+          <option value="08001 - Valencia">Valencia</option>
+          <option value="11001 - Barquisimeto">Barquisimeto</option>
+          <option value="02001 - Barcelona">Barcelona</option>
+        <optgroup>
+      </select>
+    </div>
+
+    <div>
+    <label>Tipo de documento</label><br>
+    <select id="tipo_documento" name="tipo_documento" [(ngModel)]="tipo_documento" placeholder="000 000 000" pattern="[0-9]{6,12}" title="Ingrese solo números" required>
+      <option value="" disabled>Seleccione...</option>
+      <option value="CC" selected>Cédula de Ciudadanía</option>
+      <option value="TI">Tarjeta de Identidad</option>
+      <option value="CE">Cedula de Extranjeria</option>
+    </select>
+    </div>
+
+    <div>
+      <label>Número de Identificación:</label><br>
+      <input type="text" id="numero_identificacion" name="numero_identificacion" [(ngModel)]="numero_identificacion" placeholder="1233489498" required>
+    </div>
+    <div>
+      <label>Fecha de Nacimiento:</label><br>
+      <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" [(ngModel)]="fecha_nacimiento" placeholder="dd/mm/aaaa" required>
+    </div>
+    <div>
+      <label>Número de Celular:</label><br>
+      <input type="tel" id="celular" name="celular" [(ngModel)]="celular" placeholder="000 000 00 00" required>
+    </div>
+
+    <div>
+      <input type="checkbox" id="politica_datos" name="politica_datos" [(ngModel)]="politica_datos" required>
+      <label for="politica_datos">
+        Acepto la política de tratamiento de datos personales.<br>
+    </label>
+  </div>
+ 
+    <button type="submit" class="btn-submit">Enviar Registro</button>
+
+  </form>
+  </div>
+
+  @if (ultimoUsuario(); as user) {
+    <div class="user-info">
+      <h3>Usuario Registrado</h3>
+      <p><strong>Nombre Completo:</strong> {{ user.Nombre_Completo }}</p>
+      <p><strong>País:</strong> {{ user.pais }}</p>
+      <p><strong>Ciudad:</strong> {{ user.ciudad }}</p>
+      <p><strong>Tipo de Documento:</strong> {{ user.tipo_documento }}</p>
+      <p><strong>Número de Identificación:</strong> {{ user.numero_identificacion }}</p>
+      <p><strong>Fecha de Nacimiento:</strong> {{ user.fecha_nacimiento }}</p>
+      <p><strong>Número de Celular:</strong> {{ user.numero_de_celular }}</p>
+    </div>
+  }
+
+</main>
+<script src="js/script.js"></script>
+</body>
+</html>
