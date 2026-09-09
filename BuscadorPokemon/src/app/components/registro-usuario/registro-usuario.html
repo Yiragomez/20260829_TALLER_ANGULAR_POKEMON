@@ -1,115 +1,108 @@
 
-<body>
-  <h1>Formulario de Contacto</h1>
+<main class="registro-container">
+  <h1>Formulario de Registro</h1>
 
-  <form id='FormularioRegistro' action="#">
-
-    <div>
-        <form id="FormularioRegistro" (ngSubmit)="guardarUsuario()">
-
-    </div>
+  <form id="FormularioRegistro" (ngSubmit)="guardarUsuario()">
     <div class="form-row">
       <div class="form-group">
-        <label>Nombre:</label>
+        <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" [(ngModel)]="nombre" name="nombre" placeholder="Carlos" required>
+      </div>
+
+      <div class="form-group">
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" [(ngModel)]="apellido" name="apellido" placeholder="Perez" required>
       </div>
     </div>
 
-    
+    <div class="form-row">
+      <div class="form-group">
+        <label for="pais">País:</label>
+        <select id="pais" name="pais" [(ngModel)]="pais" required>
+          <option value="" disabled selected>Seleccione un país</option>
+          <option value="Colombia">Colombia</option>
+          <option value="Canada">Canada</option>
+          <option value="Venezuela">Venezuela</option>
+        </select>
+      </div>
 
-    <div class="form-group">
-      <label for="Apellido">Apellido:</label><br>
-      <input type="text" id="apellido" [(ngModel)]="apellido" name="apellido" placeholder="Perez" required>
-    </div>
-
-    <div>
-      <label for="pais">Pais:</label><br>
-      <select id="pais" name="pais" [(ngModel)]="pais" required>
-        <option value="" disabled selected>Selelccionar</option>
-        <option value="169 - Colombia"selected>Colombia</option>
-        <option value="149 - Canada">Canada</option>
-        <option value="850 - Venezuela">Venezuela</option>
-      </select>
-    </div>
-    <br>
-
-    <div>
-     <label for="ciudad">Ciudad:</label><br>
-      <select id="ciudad" name="ciudad" [(ngModel)]="ciudad" required>
-        <option value="" disabled selected>Seleccione una opción</option>
-        <optgroup label="Colombia">
-          <option value="11001 - Bogotá D.C.,"></option>
-          <option value="05001 - Medellin">Medellín</option>
-          <option value="76001 - Cali">Cali</option>
-          <option value="08001 - Barranquilla">Barranquilla</option>
-          <option value="13001 - Cartagena">Cartagena</option>
-        <optgroup>
-        <optgroup label="Canada">
-          <option value="3520005 - Toronto">Toronto</option>
-          <option value="2466023 - Montrèal">Montrèal</option>
-          <option value="5915022 - Vancouver">Vancouver</option>
-          <option value="4806016 - Calgary">Calgary</option>
-          <option value="4811061 - Edmonton">Edmonton</option>
-        <optgroup>
-        <optgroup label="Venezuela">
-          <option value="01001 - Caracas">Caracas</option>
-          <option value="24001 - Maracaibo">Maracaibo</option>
-          <option value="08001 - Valencia">Valencia</option>
-          <option value="11001 - Barquisimeto">Barquisimeto</option>
-          <option value="02001 - Barcelona">Barcelona</option>
-        <optgroup>
-      </select>
+      <div class="form-group">
+        <label for="ciudad">Ciudad:</label>
+        <select id="ciudad" name="ciudad" [(ngModel)]="ciudad" required>
+          <option value="" disabled selected>Seleccione una opción</option>
+          <optgroup label="Colombia">
+            <option value="Bogotá D.C.">Bogotá D.C.</option>
+            <option value="Medellín">Medellín</option>
+            <option value="Cali">Cali</option>
+            <option value="Barranquilla">Barranquilla</option>
+            <option value="Cartagena">Cartagena</option>
+          </optgroup>
+          <optgroup label="Canada">
+            <option value="Toronto">Toronto</option>
+            <option value="Montrèal">Montrèal</option>
+            <option value="Vancouver">Vancouver</option>
+            <option value="Calgary">Calgary</option>
+            <option value="Edmonton">Edmonton</option>
+          </optgroup>
+          <optgroup label="Venezuela">
+            <option value="Caracas">Caracas</option>
+            <option value="Maracaibo">Maracaibo</option>
+            <option value="Valencia">Valencia</option>
+            <option value="Barquisimeto">Barquisimeto</option>
+            <option value="Barcelona">Barcelona</option>
+          </optgroup>
+        </select>
+      </div>
     </div>
 
-    <div>
-    <label>Tipo de documento</label><br>
-    <select id="tipo_documento" name="tipo_documento" [(ngModel)]="tipo_documento" placeholder="000 000 000" pattern="[0-9]{6,12}" title="Ingrese solo números" required>
-      <option value="" disabled>Seleccione...</option>
-      <option value="CC" selected>Cédula de Ciudadanía</option>
-      <option value="TI">Tarjeta de Identidad</option>
-      <option value="CE">Cedula de Extranjeria</option>
-    </select>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="tipo_documento">Tipo de documento</label>
+        <select id="tipo_documento" name="tipo_documento" [(ngModel)]="tipo_documento" required>
+          <option value="" disabled>Seleccione...</option>
+          <option value="CC">Cédula de Ciudadanía</option>
+          <option value="TI">Tarjeta de Identidad</option>
+          <option value="CE">Cédula de Extranjería</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="numero_identificacion">Número de Identificación:</label>
+        <input type="text" id="numero_identificacion" name="numero_identificacion" [(ngModel)]="numero_identificacion" placeholder="1233489498" required>
+      </div>
     </div>
 
-    <div>
-      <label>Número de Identificación:</label><br>
-      <input type="text" id="numero_identificacion" name="numero_identificacion" [(ngModel)]="numero_identificacion" placeholder="1233489498" required>
-    </div>
-    <div>
-      <label>Fecha de Nacimiento:</label><br>
-      <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" [(ngModel)]="fecha_nacimiento" placeholder="dd/mm/aaaa" required>
-    </div>
-    <div>
-      <label>Número de Celular:</label><br>
-      <input type="tel" id="celular" name="celular" [(ngModel)]="celular" placeholder="000 000 00 00" required>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" [(ngModel)]="fecha_nacimiento" required>
+      </div>
+
+      <div class="form-group">
+        <label for="celular">Número de Celular:</label>
+        <input type="tel" id="celular" name="celular" [(ngModel)]="celular" placeholder="000 000 00 00" required>
+      </div>
     </div>
 
-    <div>
+    <div class="checkbox-group">
       <input type="checkbox" id="politica_datos" name="politica_datos" [(ngModel)]="politica_datos" required>
-      <label for="politica_datos">
-        Acepto la política de tratamiento de datos personales.<br>
-    </label>
-  </div>
- 
-    <button type="submit" class="btn-submit">Enviar Registro</button>
+      <label for="politica_datos">Acepto la política de tratamiento de datos personales.</label>
+    </div>
 
+    <button type="submit" class="btn-submit">Enviar Registro</button>
   </form>
-  </div>
 
   @if (ultimoUsuario(); as user) {
     <div class="user-info">
       <h3>Usuario Registrado</h3>
-      <p><strong>Nombre Completo:</strong> {{ user.Nombre_Completo }}</p>
-      <p><strong>País:</strong> {{ user.pais }}</p>
-      <p><strong>Ciudad:</strong> {{ user.ciudad }}</p>
-      <p><strong>Tipo de Documento:</strong> {{ user.tipo_documento }}</p>
-      <p><strong>Número de Identificación:</strong> {{ user.numero_identificacion }}</p>
-      <p><strong>Fecha de Nacimiento:</strong> {{ user.fecha_nacimiento }}</p>
-      <p><strong>Número de Celular:</strong> {{ user.numero_de_celular }}</p>
+      <p><strong>Nombre Completo:</strong> {{ user.nombreCompleto }}</p>
+      <p><strong>País:</strong> {{ user.LugarNacimiento.pais }}</p>
+      <p><strong>Ciudad:</strong> {{ user.LugarNacimiento.ciudad }}</p>
+      <p><strong>Tipo de Documento:</strong> {{ user.documento.tipo }}</p>
+      <p><strong>Número de Identificación:</strong> {{ user.documento.numero }}</p>
+      <p><strong>Fecha de Nacimiento:</strong> {{ user.fecha }}</p>
+      <p><strong>Número de Celular:</strong> {{ user.numero }}</p>
     </div>
   }
-
 </main>
-<script src="js/script.js"></script>
-</body>
-</html>
+
