@@ -1,0 +1,32 @@
+<div>
+    <h2>La Mochila de los Pokemon</h2>
+    <p> Total en almacen: <strong>{{ pokemonService.misPokemones().length }}</strong></p>
+</div>
+
+<div class="grid-pokemons">
+    @for (poke of pokemonService.misPokemones(); track poke.id; let idx = $index; let total = $count) {
+        <div appResaltarTarjeta class="item-inventario" [ngStyle]="{'favorito-activo': poke.favorito}">
+            <span class="posicion-badge"> {{ idx + 1 }} de {{ total }}</span>
+            <img [src]="poke.image"/>
+            <h4> {{ poke.name }}</h4>
+            <p> {{ poke.type }}</p>
+            
+            <div class="acciones"> 
+                <button 
+                (click)="pokemonService.actualizarFavorito(poke.id)"
+                [class.btn-fav] = "poke.esFavorito">
+
+                {{poke.esFavorito ? 'Favorito' : 'Marcar'}}
+                </button>
+                <button class ="btn-eliminar" (click)="pokemonService.eliminarPokemon(poke.id)">
+                    Liberar
+                </button>
+            </div>
+        </div>
+        }
+
+
+
+
+</div>
+ 
