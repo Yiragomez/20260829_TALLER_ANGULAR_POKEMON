@@ -1,5 +1,5 @@
 import { Injectable, inject, signal } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 export interface PokemonTarjeta {
   id: number;
@@ -17,7 +17,11 @@ export class PokemonStorageService {
   private http = inject(HttpClient);
   private readonly STORAGE_KEY = 'equipo_pokemon_registrado';
 
-  misPokemones = signal<PokemonTarjeta[]>([]);
+  misPokemons = signal<PokemonTarjeta[]>([]);
+
+  misPokemon() {
+    return this.misPokemons();
+  }
 
   constructor() {
     this.cargarPokemonesDesdeStorage();
@@ -26,7 +30,7 @@ export class PokemonStorageService {
   private cargarPokemonesDesdeStorage() {
     const data = localStorage.getItem(this.STORAGE_KEY);
     if (data) {
-      this.misPokemones.set(JSON.parse(data));
+      this.misPokemons.set(JSON.parse(data));
     }
     
   }
@@ -39,8 +43,8 @@ export class PokemonStorageService {
   // Guardar un nuevo Pokémon en el almacenamiento
 
   guardarPokemon(nuevo: PokemonTarjeta){
-    const actualizados = [...this.misPokemones(), nuevo];
-    this.misPokemones.set(actualizados);
+    const actualizados = [...this.misPokemons(), nuevo];
+    this.misPokemons.set(actualizados);
     localStorage.setItem(this.STORAGE_KEY, JSON.stringify(actualizados));
 
     
@@ -48,20 +52,20 @@ export class PokemonStorageService {
   // Actualizar el estado de favorito de un Pokémon
 
   actualizarFavorito(id: number, ){
-    const actualizados = this.misPokemones().map(poke =>{
+    const actualizados = this.misPokemons().map(poke =>{
       if(poke.id === id){
         return{...poke, esFavorito: !poke.esFavorito}
       }
       return poke;
     });
-    this.misPokemones.set(actualizados);
+    this.misPokemons.set(actualizados);
     localStorage.setItem(this.STORAGE_KEY, JSON.stringify(actualizados));
   };
   // Eliminar un Pokémon del almacenamiento
 
   eliminarPokemon(id: number){
-    const filtrados = this.misPokemones().filter(poke => poke.id !== id);
-    this.misPokemones.set(filtrados);
+    const filtrados = this.misPokemons().filter(poke => poke.id !== id);
+    this.misPokemons.set(filtrados);
     localStorage.setItem(this.STORAGE_KEY, JSON.stringify(filtrados));
   }
 }

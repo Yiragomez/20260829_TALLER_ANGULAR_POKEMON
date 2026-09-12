@@ -1,7 +1,7 @@
 import {
   Title
-} from "./chunk-KI6TKS6C.js";
-import "./chunk-PNN5IKAH.js";
+} from "./chunk-55XNB6NS.js";
+import "./chunk-BB3YPMIX.js";
 import {
   HashLocationStrategy,
   Location,
@@ -11,11 +11,11 @@ import {
   PathLocationStrategy,
   PlatformNavigation,
   ViewportScroller
-} from "./chunk-YE2UJ5FW.js";
+} from "./chunk-IGVV636Z.js";
 import {
   LOCATION_INITIALIZED,
   PlatformLocation
-} from "./chunk-J6FGXRTB.js";
+} from "./chunk-FGPJMWTW.js";
 import {
   APP_BOOTSTRAP_LISTENER,
   ApplicationRef,
@@ -121,14 +121,14 @@ import {
   ɵɵloadQuery,
   ɵɵqueryRefresh,
   ɵɵsanitizeUrlOrResourceUrl
-} from "./chunk-WPPHDV2J.js";
+} from "./chunk-VRBXU65M.js";
 import {
   __async,
   __spreadProps,
   __spreadValues
 } from "./chunk-WDMUDEB6.js";
 
-// node_modules/.pnpm/@angular+router@21.2.22_@angular+common@21.2.22_@angular+core@21.2.22_@angular+compiler_e3794060f7c537b527ae114476234b95/node_modules/@angular/router/fesm2022/_router-chunk.mjs
+// node_modules/@angular/router/fesm2022/_router-chunk.mjs
 var PRIMARY_OUTLET = "primary";
 var RouteTitleKey = /* @__PURE__ */ Symbol("RouteTitle");
 var ParamsAsMap = class {
@@ -4545,7 +4545,7 @@ function validateCommands(commands) {
   }
 }
 
-// node_modules/.pnpm/@angular+router@21.2.22_@angular+common@21.2.22_@angular+core@21.2.22_@angular+compiler_e3794060f7c537b527ae114476234b95/node_modules/@angular/router/fesm2022/_router_module-chunk.mjs
+// node_modules/@angular/router/fesm2022/_router_module-chunk.mjs
 var ReactiveRouterState = class _ReactiveRouterState {
   router = inject(Router);
   stateManager = inject(StateManager);
@@ -6011,7 +6011,7 @@ function provideRouterInitializer() {
   }];
 }
 
-// node_modules/.pnpm/@angular+router@21.2.22_@angular+common@21.2.22_@angular+core@21.2.22_@angular+compiler_e3794060f7c537b527ae114476234b95/node_modules/@angular/router/fesm2022/router.mjs
+// node_modules/@angular/router/fesm2022/router.mjs
 function mapToCanMatch(providers) {
   return providers.map((provider) => (...params) => inject(provider).canMatch(...params));
 }

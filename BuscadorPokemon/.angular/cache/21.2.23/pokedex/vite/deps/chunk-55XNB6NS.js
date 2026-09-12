@@ -1,17 +1,17 @@
 import {
   withHttpTransferCache
-} from "./chunk-PNN5IKAH.js";
+} from "./chunk-BB3YPMIX.js";
 import {
   CommonModule,
   PLATFORM_BROWSER_ID
-} from "./chunk-YE2UJ5FW.js";
+} from "./chunk-IGVV636Z.js";
 import {
   DomAdapter,
   XhrFactory,
   getDOM,
   parseCookieValue,
   setRootDomAdapter
-} from "./chunk-J6FGXRTB.js";
+} from "./chunk-FGPJMWTW.js";
 import {
   APP_ID,
   ApplicationModule,
@@ -72,13 +72,13 @@ import {
   ɵɵdefineInjector,
   ɵɵdefineNgModule,
   ɵɵinject
-} from "./chunk-WPPHDV2J.js";
+} from "./chunk-VRBXU65M.js";
 import {
   __async,
   __spreadValues
 } from "./chunk-WDMUDEB6.js";
 
-// node_modules/.pnpm/@angular+platform-browser@21.2.22_@angular+animations@21.2.22_@angular+core@21.2.22_@an_938f0ef379e2f5d010c736a286d78a2c/node_modules/@angular/platform-browser/fesm2022/_dom_renderer-chunk.mjs
+// node_modules/@angular/platform-browser/fesm2022/_dom_renderer-chunk.mjs
 var EventManagerPlugin = class {
   _doc;
   constructor(_doc) {
@@ -763,7 +763,7 @@ var EmulatedEncapsulationDomRenderer2 = class extends NoneEncapsulationDomRender
   }
 };
 
-// node_modules/.pnpm/@angular+platform-browser@21.2.22_@angular+animations@21.2.22_@angular+core@21.2.22_@an_938f0ef379e2f5d010c736a286d78a2c/node_modules/@angular/platform-browser/fesm2022/_browser-chunk.mjs
+// node_modules/@angular/platform-browser/fesm2022/_browser-chunk.mjs
 var BrowserDomAdapter = class _BrowserDomAdapter extends DomAdapter {
   supportsDOMEvents = true;
   static makeCurrent() {
@@ -1132,7 +1132,7 @@ var BrowserModule = class _BrowserModule {
   }], () => [], null);
 })();
 
-// node_modules/.pnpm/@angular+platform-browser@21.2.22_@angular+animations@21.2.22_@angular+core@21.2.22_@an_938f0ef379e2f5d010c736a286d78a2c/node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs
+// node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs
 var Meta = class _Meta {
   _doc;
   _dom;
@@ -1765,4 +1765,4 @@ export {
   provideClientHydration,
   VERSION
 };
-//# sourceMappingURL=chunk-KI6TKS6C.js.map
+//# sourceMappingURL=chunk-55XNB6NS.js.map

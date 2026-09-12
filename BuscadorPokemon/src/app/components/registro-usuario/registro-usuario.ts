@@ -18,11 +18,14 @@ export interface Usuario {
   fechaRegistro: string;
 }
 
+
+ 
+
 @Component({
   imports: [FormsModule],
   selector: 'app-registro-usuario',
   standalone: true,
-  styleUrl: './registro-usuario.css',
+  styleUrls: ['./registro-usuario.css'],
   templateUrl: './registro-usuario.html',
 })
 export class RegistroUsuario {

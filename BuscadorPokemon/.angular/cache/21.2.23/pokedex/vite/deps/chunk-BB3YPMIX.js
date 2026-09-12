@@ -2,7 +2,7 @@ import {
   PlatformLocation,
   XhrFactory,
   parseCookieValue
-} from "./chunk-J6FGXRTB.js";
+} from "./chunk-FGPJMWTW.js";
 import {
   APP_BOOTSTRAP_LISTENER,
   ApplicationRef,
@@ -45,7 +45,7 @@ import {
   ɵɵdefineInjector,
   ɵɵdefineNgModule,
   ɵɵinject
-} from "./chunk-WPPHDV2J.js";
+} from "./chunk-VRBXU65M.js";
 import {
   __async,
   __objRest,
@@ -53,7 +53,7 @@ import {
   __spreadValues
 } from "./chunk-WDMUDEB6.js";
 
-// node_modules/.pnpm/@angular+common@21.2.22_@angular+core@21.2.22_@angular+compiler@21.2.22_rxjs@7.8.2_zone.js@0.15.1__rxjs@7.8.2/node_modules/@angular/common/fesm2022/_module-chunk.mjs
+// node_modules/@angular/common/fesm2022/_module-chunk.mjs
 var HttpHeaders = class _HttpHeaders {
   headers;
   normalizedNames = /* @__PURE__ */ new Map();
@@ -2101,7 +2101,7 @@ var HttpClientJsonpModule = class _HttpClientJsonpModule {
   }], null, null);
 })();
 
-// node_modules/.pnpm/@angular+common@21.2.22_@angular+core@21.2.22_@angular+compiler@21.2.22_rxjs@7.8.2_zone.js@0.15.1__rxjs@7.8.2/node_modules/@angular/common/fesm2022/http.mjs
+// node_modules/@angular/common/fesm2022/http.mjs
 var HTTP_TRANSFER_CACHE_ORIGIN_MAP = new InjectionToken(typeof ngDevMode !== "undefined" && ngDevMode ? "HTTP_TRANSFER_CACHE_ORIGIN_MAP" : "");
 var BODY = "b";
 var HEADERS = "h";
@@ -2608,4 +2608,4 @@ export {
   withHttpTransferCache,
   httpResource
 };
-//# sourceMappingURL=chunk-PNN5IKAH.js.map
+//# sourceMappingURL=chunk-BB3YPMIX.js.map

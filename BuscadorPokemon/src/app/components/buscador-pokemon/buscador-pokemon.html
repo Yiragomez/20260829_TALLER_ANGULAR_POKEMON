@@ -1,38 +1,35 @@
-<div>
-  <h2>La mochila de los pokemon</h2>
-  <p>Total en almacen <strong>{{ pokemonService.misPokemon().length }}</strong></p>
-</div>
+<section class="buscador-container">
+  <h2>Buscar Pokémon</h2>
+  <p>Consulta un Pokémon y regístralo en tu equipo.</p>
 
-<div class="grid-pokemon">
-  @if (pokemonService.misPokemon().length === 0) {
-    <div class="sin-datos">
-      <p>No tienes ningún Pokémon en tu inventario</p>
-      <p>Registra algunos para comenzar</p>
-    </div>
-  } @else {
-    @for (poke of pokemonService.misPokemon(); track poke.id; let idx = $index; let total = $count) {
-      <div
-        appResaltarTarjeta
-        class="item-inventario"
-        [ngStyle]="{ 'background-color': poke.esFavorito ? '#fffde7' : '#ffffff', 'border': poke.esFavorito ? '2px solid #fbc02d' : '1px solid #e0e0e0' }"
-      >
-        <span class="posicion-badge">#{{ idx + 1 }} de {{ total }}</span>
-        <img [src]="poke.image" [alt]="poke.name" />
-        <h4>{{ poke.name }}</h4>
-        <p>{{ poke.type }}</p>
+  <form (ngSubmit)="buscarPokemon()">
+    <label for="nombrePokemon">Nombre o número</label>
+    <input
+      id="nombrePokemon"
+      name="nombrePokemon"
+      type="text"
+      [ngModel]="nombrePokemonInput()"
+      (ngModelChange)="nombrePokemonInput.set($event)"
+      placeholder="Ejemplo: pikachu o 25"
+      required
+    />
+    <button type="submit" [disabled]="cargando()">
+      {{ cargando() ? 'Buscando...' : 'Buscar' }}
+    </button>
+  </form>
 
-        <div class="acciones">
-          <button
-            (click)="pokemonService.actualizarFavorito(poke.id)"
-            [class.btn-fav]="poke.esFavorito"
-          >
-            {{ poke.esFavorito ? 'Favoritos' : 'Marcar' }}
-          </button>
-          <button class="btn-eliminar" (click)="pokemonService.eliminarPokemon(poke.id)">
-            Liberar
-          </button>
-        </div>
-      </div>
-    }
+  @if (mensajeError(); as error) {
+    <p role="alert">{{ error }}</p>
   }
-</div>
+
+  @if (pokemon(); as poke) {
+    <article class="card-pokemon">
+      <img [src]="poke.image" [alt]="poke.name" />
+      <h3>{{ poke.name }}</h3>
+      <p>Tipo: <span class="badge-tipo">{{ poke.type }}</span></p>
+      <button class="btn-guardar" type="button" (click)="guardarEnEquipo()">
+        ALMACENAR EN INVENTARIO
+      </button>
+    </article>
+  }
+</section>

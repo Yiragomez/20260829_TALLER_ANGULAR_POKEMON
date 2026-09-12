@@ -6,19 +6,19 @@
     <div class="form-row">
       <div class="form-group">
         <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" [(ngModel)]="nombre" name="nombre" placeholder="Carlos" required>
+        <input type="text" id="nombre" [ngModel]="nombre()" (ngModelChange)="nombre.set($event)" name="nombre" placeholder="Carlos" required>
       </div>
 
       <div class="form-group">
         <label for="apellido">Apellido:</label>
-        <input type="text" id="apellido" [(ngModel)]="apellido" name="apellido" placeholder="Perez" required>
+        <input type="text" id="apellido" [ngModel]="apellido()" (ngModelChange)="apellido.set($event)" name="apellido" placeholder="Perez" required>
       </div>
     </div>
 
     <div class="form-row">
       <div class="form-group">
         <label for="pais">País:</label>
-        <select id="pais" name="pais" [(ngModel)]="pais" required>
+        <select id="pais" name="pais" [ngModel]="pais()" (ngModelChange)="pais.set($event)" required>
           <option value="" disabled selected>Seleccione un país</option>
           <option value="Colombia">Colombia</option>
           <option value="Canada">Canada</option>
@@ -28,7 +28,7 @@
 
       <div class="form-group">
         <label for="ciudad">Ciudad:</label>
-        <select id="ciudad" name="ciudad" [(ngModel)]="ciudad" required>
+        <select id="ciudad" name="ciudad" [ngModel]="ciudad()" (ngModelChange)="ciudad.set($event)" required>
           <option value="" disabled selected>Seleccione una opción</option>
           <optgroup label="Colombia">
             <option value="Bogotá D.C.">Bogotá D.C.</option>
@@ -58,7 +58,7 @@
     <div class="form-row">
       <div class="form-group">
         <label for="tipo_documento">Tipo de documento</label>
-        <select id="tipo_documento" name="tipo_documento" [(ngModel)]="tipo_documento" required>
+        <select id="tipo_documento" name="tipo_documento" [ngModel]="tipo_documento()" (ngModelChange)="tipo_documento.set($event)" required>
           <option value="" disabled>Seleccione...</option>
           <option value="CC">Cédula de Ciudadanía</option>
           <option value="TI">Tarjeta de Identidad</option>
@@ -68,24 +68,24 @@
 
       <div class="form-group">
         <label for="numero_identificacion">Número de Identificación:</label>
-        <input type="text" id="numero_identificacion" name="numero_identificacion" [(ngModel)]="numero_identificacion" placeholder="1233489498" required>
+        <input type="text" id="numero_identificacion" name="numero_identificacion" [ngModel]="numero_identificacion()" (ngModelChange)="numero_identificacion.set($event)" placeholder="1233489498" required>
       </div>
     </div>
 
     <div class="form-row">
       <div class="form-group">
         <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
-        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" [(ngModel)]="fecha_nacimiento" required>
+        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" [ngModel]="fecha_nacimiento()" (ngModelChange)="fecha_nacimiento.set($event)" required>
       </div>
 
       <div class="form-group">
         <label for="celular">Número de Celular:</label>
-        <input type="tel" id="celular" name="celular" [(ngModel)]="celular" placeholder="000 000 00 00" required>
+        <input type="tel" id="celular" name="celular" [ngModel]="celular()" (ngModelChange)="celular.set($event)" placeholder="000 000 00 00" required>
       </div>
     </div>
 
     <div class="checkbox-group">
-      <input type="checkbox" id="politica_datos" name="politica_datos" [(ngModel)]="politica_datos" required>
+      <input type="checkbox" id="politica_datos" name="politica_datos" [ngModel]="politica_datos()" (ngModelChange)="politica_datos.set($event)" required>
       <label for="politica_datos">Acepto la política de tratamiento de datos personales.</label>
     </div>
 

@@ -1,20 +1,17 @@
-import { Component, inject, signal } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { NgClass, NgStyle } from '@angular/common';
+import { Component, inject, signal} from '@angular/core';
+import { FormsModule} from '@angular/forms';
 import { PokemonStorageService, PokemonTarjeta} from '../../services/pokemon-storage';
-import { ResaltarTarjeta} from '../../directives/resaltar-tarjeta';
 
 
-
- 
 @Component({
   selector: 'app-buscador-pokemon',
-  imports: [FormsModule, NgClass, NgStyle, ResaltarTarjeta],
+  imports: [FormsModule],
   standalone: true,
   templateUrl: './buscador-pokemon.html',
-  styleUrl: './buscador-pokemon.css',
+  styleUrl: './buscador-pokemon.css'
 })
 export class BuscadorPokemon {
+  
   pokemonService = inject(PokemonStorageService);
 
   nombrePokemonInput = signal('');
@@ -24,41 +21,38 @@ export class BuscadorPokemon {
 
    buscarPokemon() {
 
+    const nombrePokemon = this.nombrePokemonInput().trim();
 
-    const nombrePokemon = this.nombrePokemonInput().toLowerCase().trim();
     if (!nombrePokemon) return;
 
     this.cargando.set(true);
-    this.mensajeError.set(null);
 
+    this.mensajeError.set(null);
     this.pokemonService.buscarEnAPI(nombrePokemon).subscribe({
-      next: (res) => {
+      next: (res) =>{
         this.pokemon.set({
           id: res.id,
           name: res.name.toUpperCase(),
           image: res.sprites.front_default,
           type: res.types[0].type.name,
           base_experience: res.base_experience,
-          esFavorito: false,
+          esFavorito:false
         });
         this.cargando.set(false);
-      }, error:() => {
-        this.pokemon.set(null);
-        this.mensajeError.set('Ojito, Pokemon no encontrado');
-        this.cargando.set(false);
-      }
-      });
+      }, error: () => {
+      this.mensajeError.set(null);
+      this.mensajeError.set('No se encontró el Pokémon');
+      this.cargando.set(false);
+    }
 
-  }
-
-guardarEnEquipo() {
+  }); 
+} 
+  guardarEnEquipo() {
     const poke = this.pokemon();
     if (poke) {
       this.pokemonService.guardarPokemon(poke);
       alert(`${poke.name} agregado al almacenamiento exitosamente`);
       this.pokemon.set(null);
-      this.nombrePokemonInput.set('');
-      
-    }
-}
+    } 
+  }
 }
